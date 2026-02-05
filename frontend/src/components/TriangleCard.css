@@ -1,0 +1,164 @@
+.triangle-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mystic-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Specific Row Spacing */
+.row-top {
+    gap: 15px;
+}
+
+.row-upper-mid {
+    gap: 80px;
+}
+
+/* Wider gap for E,F */
+.row-center {
+    margin: 10px 0;
+}
+
+.row-wings {
+    align-items: center;
+    gap: 30px;
+    margin: 10px 0 20px 0;
+    position: relative;
+}
+
+.row-lower-mid {
+    gap: 15px;
+}
+
+.row-bottom-1 {
+    margin: 0;
+}
+
+.row-bottom-2 {
+    gap: 15px;
+}
+
+/* Wing Groups */
+.wing-left,
+.wing-right {
+    display: flex;
+    gap: 10px;
+}
+
+.wing-spacer {
+    width: 60px;
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+}
+
+/* Node Styling */
+.t-node {
+    width: 50px;
+    height: 60px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+    font-family: 'Outfit', sans-serif;
+    cursor: default;
+}
+
+.t-node:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    border-color: #6366f1;
+    z-index: 10;
+}
+
+/* Value text */
+.t-node .val {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+/* Label text (tooltip/tiny) */
+.t-node .lbl {
+    position: absolute;
+    top: -18px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #9ca3af;
+    text-transform: uppercase;
+    background: white;
+    padding: 0 4px;
+}
+
+/* Variations */
+.t-node.primary {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    border: none;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.t-node.primary .val {
+    color: white;
+}
+
+.t-node.secondary {
+    border-color: #6366f1;
+    background: #eef2ff;
+}
+
+.t-node.secondary .val {
+    color: #4f46e5;
+}
+
+.t-node.small {
+    width: 40px;
+    height: 50px;
+}
+
+.t-node.small .val {
+    font-size: 1.2rem;
+}
+
+/* Responsive Scaling */
+@media (max-width: 600px) {
+    .t-node {
+        width: 40px;
+        height: 50px;
+    }
+
+    .t-node .val {
+        font-size: 1.2rem;
+    }
+
+    .row-wings {
+        gap: 10px;
+    }
+
+    .wing-spacer {
+        width: 30px;
+    }
+
+    .row-upper-mid {
+        gap: 40px;
+    }
+}
